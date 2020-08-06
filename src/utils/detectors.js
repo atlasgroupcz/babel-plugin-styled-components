@@ -2,9 +2,8 @@ import { useTopLevelImportPaths } from './options'
 
 const VALID_TOP_LEVEL_IMPORT_PATHS = [
   'styled-components',
-  'styled-components/no-tags',
-  'styled-components/native',
-  'styled-components/primitives',
+  'react-atlantic',
+  '@atlasgroup/react-atlantic',
 ]
 
 export const isValidTopLevelImport = (x, state) =>
@@ -59,7 +58,7 @@ export const importLocalName = (name, state, bypassCache = false) => {
   return localName
 }
 
-export const isStyled = t => (tag, state) => {
+export const isStyled = (t) => (tag, state) => {
   if (
     t.isCallExpression(tag) &&
     t.isMemberExpression(tag.callee) &&
@@ -94,28 +93,28 @@ export const isStyled = t => (tag, state) => {
   }
 }
 
-export const isCSSHelper = t => (tag, state) =>
+export const isCSSHelper = (t) => (tag, state) =>
   t.isIdentifier(tag) && tag.name === importLocalName('css', state)
 
-export const isCreateGlobalStyleHelper = t => (tag, state) =>
+export const isCreateGlobalStyleHelper = (t) => (tag, state) =>
   t.isIdentifier(tag) &&
   tag.name === importLocalName('createGlobalStyle', state)
 
-export const isInjectGlobalHelper = t => (tag, state) =>
+export const isInjectGlobalHelper = (t) => (tag, state) =>
   t.isIdentifier(tag) && tag.name === importLocalName('injectGlobal', state)
 
-export const isKeyframesHelper = t => (tag, state) =>
+export const isKeyframesHelper = (t) => (tag, state) =>
   t.isIdentifier(tag) && tag.name === importLocalName('keyframes', state)
 
-export const isWithThemeHelper = t => (tag, state) =>
+export const isWithThemeHelper = (t) => (tag, state) =>
   t.isIdentifier(tag) && tag.name === importLocalName('withTheme', state)
 
-export const isHelper = t => (tag, state) =>
+export const isHelper = (t) => (tag, state) =>
   isCSSHelper(t)(tag, state) ||
   isKeyframesHelper(t)(tag, state) ||
   isWithThemeHelper(t)(tag, state)
 
-export const isPureHelper = t => (tag, state) =>
+export const isPureHelper = (t) => (tag, state) =>
   isCSSHelper(t)(tag, state) ||
   isKeyframesHelper(t)(tag, state) ||
   isCreateGlobalStyleHelper(t)(tag, state) ||
