@@ -1,6 +1,6 @@
 {
     "version": "0.1.0",
-    "name": "@atlasgroup/babel-plugin-react-atlantic",
+    "name": "babel-plugin-react-atlantic",
     "private": false,
     "description": "Extending babel-plugin-styled-components for use with react-atlantic",
     "main": "lib/index.js",

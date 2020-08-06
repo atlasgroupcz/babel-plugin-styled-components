@@ -16,9 +16,6 @@ export default function({ types: t }) {
             JSXAttribute(path, state) {
               transpileCssProp(t)(path, state)
             },
-            VariableDeclarator(path, state) {
-              assignStyledRequired(t)(path, state)
-            },
           },
           state
         )
@@ -32,6 +29,9 @@ export default function({ types: t }) {
         displayNameAndId(t)(path, state)
         templateLiterals(t)(path, state)
         pureAnnotation(t)(path, state)
+      },
+      VariableDeclarator(path, state) {
+        assignStyledRequired(t)(path, state)
       },
     },
   }
