@@ -1,14 +1,8 @@
 {
-    "version": "1.11.1",
-    "name": "babel-plugin-react-atlantic",
-    "description": "Improve the debugging experience and add server-side rendering support to styled-components",
-    "repository": "styled-components/babel-plugin-styled-components",
-    "contributors": [
-        "Vladimir Danchenkov <vladimir.danchenkov@gmail.com>",
-        "Max Stoiber <contact@mxstbr.com>",
-        "Phil Pluckthun <phil@kitten.sh>",
-        "Evan Jacobs <probablyup@gmail.com>"
-    ],
+    "version": "0.1.0",
+    "name": "@atlasgroup/babel-plugin-react-atlantic",
+    "private": false,
+    "description": "Extending babel-plugin-styled-components for use with react-atlantic",
     "main": "lib/index.js",
     "files": [
         "lib"
